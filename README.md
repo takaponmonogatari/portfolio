@@ -16,9 +16,9 @@
  中学生が通学時間で高校を比較したいと考えた時。また行き方や出発時間もあわせて調べたいと考えた時。
 
 ## 設計書
-ワイヤーフレーム: https://app.diagrams.net/#G1XqdZUCSZsVnXDivEMzY0dswxziEc7Ghe
-ER図：https://app.diagrams.net/#G1XgBkCxMvd3XPXRBYpPca-nGSnXkns7Be
-テーブル定義書：https://docs.google.com/spreadsheets/d/1qRevAAwN8MZDAthhHMIAg-WAcKdRGCFE/edit#gid=1348943825
+- ワイヤーフレーム: https://app.diagrams.net/#G1XqdZUCSZsVnXDivEMzY0dswxziEc7Ghe
+- ER図：https://app.diagrams.net/#G1XgBkCxMvd3XPXRBYpPca-nGSnXkns7Be
+- テーブル定義書：https://docs.google.com/spreadsheets/d/1qRevAAwN8MZDAthhHMIAg-WAcKdRGCFE/edit#gid=1348943825
 
 ## チャレンジ要素一覧
  https://docs.google.com/spreadsheets/d/1eXxctoGGXmnwEBzaFXN3hkpJgmElsiISzulNaUfmVgM/edit#gid=0
