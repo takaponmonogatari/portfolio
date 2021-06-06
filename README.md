@@ -32,3 +32,4 @@
 - Google_Maps_API https://www.zenrin-datacom.net/business/gmapsapi/api_key/
 - 作品画像 https://pixabay.com/ja/
 - 高校情報の参考 https://www.studyh.jp/kansai/list/sepa_list/list_c_nara.html
+- Yahoo!電車乗り換え案内へのリンク https://transit.yahoo.co.jp/
