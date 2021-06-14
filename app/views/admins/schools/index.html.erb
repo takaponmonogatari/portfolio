@@ -1,0 +1,14 @@
+<% if params[:prefecture_id] %>
+	<h2><%= @prefecture.name %>の高校一覧 (全<%= @all_schools_count %>件)</h2>
+<% else %>
+  <h2>高校一覧 (全<%= @all_schools_count %>件)</h2>
+<% end %>
+<h3>
+  <%= link_to "+", new_admins_school_path %>
+</h3>
+<% if @schools.first %>
+ <%= render "admins/schools/index", schools: @schools %>
+<% else %>
+ <h3>対応する高校はありませんでした。</h3>
+<% end %>
+

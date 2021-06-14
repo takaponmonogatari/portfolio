@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>学校ID</th>
+      <th>学校名</th>
+      <th>学校名カナ</th>
+      <th>都道府県</th>
+      <th>区分</th>
+      <th>郵便番号</th>
+      <th>住所</th>
+      <th>学校HP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% schools.each do |school| %>
+     <tr>
+       <td><%= school.id %></td>
+       <td><%= school.name %></td>
+       <td><%= school.name_kana %></td>
+       <td><%= school.prefecture.name %></td>
+       <td><%= school.division.name %></td>
+       <td><%= school.postal_code %></td>
+       <td><%= school.address %></td>
+       <td><%= school.url %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,44 @@
+<%= form_with model:school,url: url, local:true do |f| %>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= f.label :name, "学校名" %></td>
+      <td><%= f.text_field :name,size:"40"  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :name_kana, "学校名カナ" %></td>
+      <td><%= f.text_field :name_kana,size:"40" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :prefecture_id, "都道府県" %></td>
+      <td><%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :division_id, "学校区分" %></td>
+      <td><%= f.collection_select :division_id, Division.all, :id, :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :postal_code, "郵便番号" %></td>
+      <td><%= f.text_field :postal_code,size:"20" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :address, "住所" %></td>
+      <td><%= f.text_field :address,size:"50" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :url, "学校HP" %></td>
+      <td><%= f.text_field :url,size:"50" %></td>
+    </tr>
+  </tbody>
+  <td></td>
+</table>
+<div>
+<%= f.submit submit %>
+</div>
+<% end %>
