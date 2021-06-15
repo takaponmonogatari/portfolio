@@ -1,4 +1,5 @@
 class School < ApplicationRecord
+  has_many :school_comments
   belongs_to :prefecture
   belongs_to :division
 
@@ -8,15 +9,5 @@ class School < ApplicationRecord
   validates :address, presence: true
   attachment :image
 
-  scope :where_prefecture_active, -> { joins(:prefecture).where(prefectures: { is_active: true }) }
 
-  def self.recommended
-    recommends = []
-    active_prefectures = Prefecture.only_active.includes(:schools)
-    active_prefectures.each do |prefecture|
-      school = prefecture.schools.last
-      recommends << school if school
-    end
-    recommends
-  end
 end

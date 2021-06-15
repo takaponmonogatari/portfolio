@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_033332) do
+ActiveRecord::Schema.define(version: 2021_06_15_062624) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,8 +30,28 @@ ActiveRecord::Schema.define(version: 2021_06_13_033332) do
     t.datetime "updated_at"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.integer "school_id", null: false
+    t.string "position"
+    t.integer "number"
+    t.float "rate"
+    t.text "review"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "prefectures", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "school_comments", force: :cascade do |t|
+    t.integer "school_id", null: false
+    t.string "position"
+    t.integer "number"
+    t.float "rate"
+    t.text "review"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

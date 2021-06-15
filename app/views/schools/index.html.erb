@@ -1,0 +1,30 @@
+<section>
+	<div>
+		<h3>都道府県一覧</h3>
+		<% @prefectures.each do |prefecture| %>
+			<%= link_to prefecture.name, schools_path(prefecture_id: prefecture.id) %>
+		<% end %>
+			<%= link_to "すべての学校", schools_path %>
+	</div>
+	<div>
+		<% if params[:prefecture_id] %>
+			<h2><%= @prefecture.name %>の高校一覧 (全<%= @all_prefectures_count %>件)</h2>
+		<% else %>
+			<h2>高校一覧 (全<%= @all_prefectures_count %>件)</h2>
+		<% end %>
+
+		<% if @schools %>
+			<div>
+				<% @schools.each do |school| %>
+						<h5><%= school.prefecture.name %></h5>
+					<%= link_to school_path(school) do %>
+						<p><%= school.name %></p>
+					<% end %>
+				<% end %>
+			</div>
+			<%= @schools %>
+		<% else %>
+			<h3>対応する高校はありませんでした。</h3>
+		<% end %>
+	</div>
+</section>

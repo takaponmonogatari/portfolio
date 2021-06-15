@@ -1,0 +1,40 @@
+<h2>高校詳細</h2>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>学校名</td>
+      <td><%= @school.name %></td>
+    </tr>
+    <tr>
+      <td>学校名カナ</td>
+      <td><%= @school.name_kana %></td>
+    </tr>
+    <tr>
+      <td>都道府県</td>
+      <td><%= @school.prefecture.name %></td>
+    </tr>
+    <tr>
+      <td>学校区分</td>
+      <td><%= @school.division.name %></td>
+    </tr>
+    <tr>
+      <td>郵便番号</td>
+      <td><%= @school.postal_code %></td>
+    </tr>
+    <tr>
+      <td>住所</td>
+      <td><%= @school.address %></td>
+    </tr>
+    <tr>
+      <td>学校HP</td>
+      <td><%= @school.url %></td>
+    </tr>
+  </tbody>
+</table>
+<%= render "schools/school_comment", school: @school,school_comment: @school_comment %>
