@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :schools do
    resources :school_comments, only: [:create, :destroy]
   end
+   resources :contacts, only: [:new, :create]
+   post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+   post 'contacts/back', to: 'contacts#back', as: 'back'
+   get 'done', to: 'contacts#done', as: 'done'
   devise_for :admins, controllers: {
     sessions: "admins/sessions"
   }

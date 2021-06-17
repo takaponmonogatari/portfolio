@@ -1,16 +1,19 @@
 <table>
-  <% @school.school_comments.each do |post| %>
+  <% @school.school_comments.each do |school_comment| %>
     <tr>
     	<td>
     	</td>
     	<td><%= school_comment.position %></td>
     	<td><%= school_comment.number %></td>
     	<td><%= school_comment.review %></td>
+    	<td><%= school_comment.rate %></td>
     </tr>
   <% end %>
 </table>
 <%= form_with model:[@school,@school_comment], local: true do |f| %>
+  <%= f.label :position,"あなたの立場" %><br>
   <%= f.text_field :position %><br>
+  <%= f.label :number,"電話番号下4桁" %><br>
   <%= f.text_field :number %><br>
    <div class="form-group row" id="star">
     <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
@@ -23,7 +26,7 @@
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>',
     starHalf: '<%= asset_path('star-half.png') %>',
-    scoreName: 'post[rate]',
+    scoreName: 'school_comment[rate]',
     half: true,
   });
   </script>
