@@ -10,6 +10,31 @@
   </head>
 
   <body>
+    <% if admin_signed_in? %>
+      <header>
+        <div>
+          <%= link_to '最適な進路選択', root_path, class: "logo" %>
+          <ul class="flex">
+            <li><%= link_to '高校一覧', admins_schools_path %></li>
+            <!--<li><#%= link_to '口コミ一覧', admin_school_coments_path %></li>-->
+            <!--<li><#%= link_to 'お問い合わせ一覧', admin_contacts_path %></li>-->
+            <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
+          </ul>
+
+        </div>
+      </header>
+      <% else %>
+      <header>
+        <div class="header-content">
+          <%= link_to 'NaganoCake', root_path, class: "logo" %>
+          <ul class="flex">
+            <li><%= link_to '高校一覧', schools_path %></li>
+            <li><%= link_to '部活動一覧', schools_path %></li>
+            <li><%= link_to 'お問い合わせページ', new_contact_path %></li>
+          </ul>
+        </div>
+      </header>
+      <% end %>
     <%= yield %>
   </body>
 </html>

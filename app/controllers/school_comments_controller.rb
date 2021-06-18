@@ -1,13 +1,20 @@
 class SchoolCommentsController < ApplicationController
   def create
-    @school = School.find(params[:school_id])
     @school_comment = SchoolComment.new(school_comment_params)
+    @school = School.find(params[:school_id])
     @school_comment.school_id = @school.id
-     if @school.save
-       redirect_to admins_school_path(@school), notice: "You have created school_comment successfully."
+     if @school_comment.save
+       redirect_to school_path(@school), notice: "You have created school_comment successfully."
      else
        render "schools/show"
      end
+  end
+
+  def destroy
+    @school = School.find(params[:id])
+    school_comment = @school.school_comments.find(params[:school_id])
+    school_comment.destroy
+    redirect_to request.referer
   end
 
   private
