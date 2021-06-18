@@ -10,6 +10,13 @@ class SchoolCommentsController < ApplicationController
      end
   end
 
+  def destroy
+    @school = School.find(params[:id])
+    school_comment = @school.school_comments.find(params[:school_id])
+    school_comment.destroy
+    redirect_to request.referer
+  end
+
   private
   def school_comment_params
     params.require(:school_comment).permit(:position, :number, :rate, :review)

@@ -37,6 +37,18 @@
     </tr>
   </tbody>
 </table>
+<table>
+  <% @school.school_comments.each do |school_comment| %>
+    <tr>
+    	<td><%= school_comment.position %></td>
+    	<td><%= school_comment.number %></td>
+    	<td><%= school_comment.review %></td>
+    	<td><%= school_comment.rate %></td>
+    	 <td><%= link_to 'Destroy', school_school_comment_path(school_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_school_comment_#{school_comment.id}"%></td>
+    </tr>
+  <% end %>
+</table>
+
 <div>
   <%= link_to "編集する", edit_admins_school_path(@school) %>
 </div>

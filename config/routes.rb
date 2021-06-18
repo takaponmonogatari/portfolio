@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   }
   namespace :admins do
     resources :schools
+    resources :contacts, only: [:index]
   end
 
 end
