@@ -1,3 +1,4 @@
+<div class="container">
 <h2>高校詳細</h2>
 <table>
   <thead>
@@ -33,8 +34,9 @@
     </tr>
     <tr>
       <td>学校HP</td>
-      <td><%= @school.url %></td>
+      <td><%= link_to @school.url %></td>
     </tr>
   </tbody>
 </table>
 <%= render "schools/school_comment", school: @school,school_comment: @school_comment %>
+</div>

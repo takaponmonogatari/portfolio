@@ -44,6 +44,6 @@ class Admins::SchoolsController < ApplicationController
 
   private
   def school_params
-    params.require(:school).permit(:prefecture_id, :division_id, :name, :name_kana, :postal_code, :address, :url, :google, :yahoo, :image)
+    params.require(:school).permit(:prefecture_id, :division_id, :name, :name_kana, :postal_code, :address, :url, :google, :yahoo, :image, :club)
   end
 end

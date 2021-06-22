@@ -6,7 +6,7 @@ class SchoolsController < ApplicationController
       all_schools = @prefecture.schools
       @schools = all_schools
     else
-    @schools = School.all
+      @schools = School.all
     end
 
   end

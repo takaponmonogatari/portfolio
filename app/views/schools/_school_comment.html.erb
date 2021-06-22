@@ -12,9 +12,10 @@
 </table>
 <%= form_with model:[@school,@school_comment], local: true do |f| %>
   <%= f.label :position,"あなたの立場" %><br>
-  <%= f.text_field :position %><br>
+  <%= f.select :position, [["在校生", "在校生"], ["卒業生", "卒業生"], ["保護者", "保護者"]], include_blank: "選択して下さい" %><br>
+
   <%= f.label :number,"電話番号下4桁" %><br>
-  <%= f.text_field :number %><br>
+  <%= f.text_field :number, autofocus: true, maxlength: "4" %><br>
    <div class="form-group row" id="star">
     <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
     <%= f.hidden_field :rate, id: :review_star %>

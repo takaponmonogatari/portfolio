@@ -1,9 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 offset-md-1">
+
 <h2>高校詳細</h2>
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
+      <th class="col-2">項目</th>
+      <th class="col">内容</th>
     </tr>
   </thead>
   <tbody>
@@ -33,17 +37,25 @@
     </tr>
     <tr>
       <td>学校HP</td>
-      <td><%= @school.url %></td>
+      <td><%= link_to @school.url, @school.url, target: :_blank, rel: "noopener noreferrer" %></td>
+    </tr>
+    <tr>
+      <td>部活</td>
+      <td><%= @school.club %></td>
     </tr>
   </tbody>
 </table>
-<table>
+    </div>
+
+    <div class="col-md-3">
+      <h4>口コミ情報</h4>
+<table class="table table-bordered">
   <% @school.school_comments.each do |school_comment| %>
     <tr>
-    	<td><%= school_comment.position %></td>
-    	<td><%= school_comment.number %></td>
-    	<td><%= school_comment.review %></td>
-    	<td><%= school_comment.rate %></td>
+    	<td class="col-1"><%= school_comment.position %></td>
+    	<td class="col-1"><%= school_comment.number %></td>
+    	<td class="col-1"><%= school_comment.review %></td>
+    	<td class="col-1"><%= school_comment.rate %></td>
     	 <td><%= link_to 'Destroy', school_school_comment_path(school_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_school_comment_#{school_comment.id}"%></td>
     </tr>
   <% end %>
@@ -55,3 +67,6 @@
 <h3>
   <%= link_to "+", new_admins_school_path %>
 </h3>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 <section>
+	<div class="container">
 	<div>
 		<h3>都道府県一覧</h3>
 		<% @prefectures.each do |prefecture| %>
@@ -16,7 +17,6 @@
 		<% if @schools %>
 			<div>
 				<% @schools.each do |school| %>
-						<h5><%= school.prefecture.name %></h5>
 					<%= link_to school_path(school) do %>
 						<p><%= school.name %></p>
 					<% end %>
@@ -25,5 +25,6 @@
 		<% else %>
 			<h3>対応する高校はありませんでした。</h3>
 		<% end %>
+	</div>
 	</div>
 </section>
