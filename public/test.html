@@ -1,4 +1,9 @@
-<link rel="stylesheet" media="all" href="/assets/admins/contacts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="ja-JP">
+<head>
+  <link rel="stylesheet" media="all" href="/assets/admins/contacts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
 <link rel="stylesheet" media="all" href="/assets/admins/schools.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
 <link rel="stylesheet" media="all" href="/assets/contacts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
 <link rel="stylesheet" media="all" href="/assets/homes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
@@ -40,7 +45,9 @@
 <script src="/assets/application.self-d8e5583e1bf57513bba19b2fefd6542475f366ba663d0b16b50bf2ef4243e437.js?body=1" data-turbolinks-track="reload"></script>
    <link rel="stylesheet" type="text/css" href="scss/slick.scss"/>
    <link rel="stylesheet" type="text/css" href="scss/application.scss"/>
+ </head>
 
+<body>
 
 <div class="content">
   <div class="regular slider">
@@ -64,20 +71,3 @@
 
 </body>
 </html>
-
-
-<div class="col-md-9 mx-auto mt-7">
-  <h1>ようこそ！ <strong>最適な進路選択へ</strong></span></h1>
-  <p>あなたの進路選択の手助けをします。学校情報や口コミ情報をチェックし、あなたに最適な高校を探しましょう。</p>
-  <p>現在は奈良県のみ調べることができます。他の都道府県の高校情報は更新までしばらくお待ちください。</p>
-
-  	<h3>都道府県一覧</h3>
-  <div class="row">
-   <p class="ml-3">
-  		<% @prefectures.each do |prefecture| %>
-	 <%= link_to prefecture.name, schools_path(prefecture_id: prefecture.id) %>
-	<% end %>
-　 </p>
-  </div>
-</div>
-

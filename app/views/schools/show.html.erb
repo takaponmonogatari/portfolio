@@ -1,10 +1,13 @@
 <div class="container">
+   <div class="row">
+    <div class="col-md-11 offset-md-1">
+
 <h2>高校詳細</h2>
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
+      <th class="col-2">項目</th>
+      <th class="col">内容</th>
     </tr>
   </thead>
   <tbody>
@@ -36,7 +39,14 @@
       <td>学校HP</td>
       <td><%= link_to @school.url %></td>
     </tr>
+     <tr>
+      <td>部活</td>
+      <td><%= @school.club %></td>
+    </tr>
   </tbody>
 </table>
-<%= render "schools/school_comment", school: @school,school_comment: @school_comment %>
+ <%= render "schools/school_comment", school: @school,school_comment: @school_comment %>
+ <table>
+
+ </table>
 </div>

@@ -7,51 +7,77 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
       <header>
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
           <a href="/" class="navbar-brand">
-            <img src="assets//logo.png" width="10%" height="10%" alt="">
+            <%= image_tag "logo.png" , :size => '40x40' %>
             最適な進路選択</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navmenu1" aria-controls="navmenu1" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navmenu1">
-         <% if admin_signed_in? %>
-         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="/admins/schools">高校一覧</a>
-          <a class="nav-item nav-link" href="/admins/schools/new">高校新規登録</a>
-          <a class="nav-item nav-link" href="#">口コミ一覧</a>
-          <a class="nav-item nav-link" href="/admins/contacts">お問い合わせ一覧</a>
-          <a class="nav-item nav-link" href="{% /admins/sign_out 'logout' %}">ログアウト</a>
-          <a class="nav-item nav-link"><%= link_to("ログアウト", "/admins/sign_out", {method: "delete", class: "nav-link"}) %></a>
-         </div>
-
-         <% else %>
-         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="/schools">高校一覧</a>
-          <a class="nav-item nav-link" href="/contacts/new">お問い合わせページ</a>
-         </div>
-         <% end %>
-
-          <%= form_with url:search_path, method: :get,local: true do |f| %>
+          <span class="ml-5"></span><%= form_with url:search_path, method: :get,local: true do |f| %>
             <%= f.text_field :content %>
             <%= f.select :model, options_for_select({ "高校" => "school.name" , "部活" => "school.club" }) %>
             <%= f.select :method, options_for_select({ "部分一致" => "partial", "前方一致" => "forward", "後方一致" => "backward", "完全一致" => "perfect" }) %>
             <%= f.submit '検索', class: "btn btn-primary" %>
           <% end %>
+
+         <% if admin_signed_in? %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navmenu1" aria-controls="navmenu1" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu1">
+         <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="/admins/schools">高校一覧</a>
+          <a class="nav-item nav-link" href="/admins/schools/new">高校新規登録</a>
+          <a class="nav-item nav-link" href="#">口コミ一覧</a>
+          <a class="nav-item nav-link" href="/admins/contacts">お問い合わせ一覧</a>
+          <a class="nav-item nav-link"><%= link_to("ログアウト", "/admins/sign_out", {method: "delete", class: "nav-link"}) %></a>
+
+         </div>
+         </div>
+
+         <% else %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navmenu1" aria-controls="navmenu1" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse ml-3" id="navmenu1">
+         <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="/schools">高校一覧</a>
+          <a class="nav-item nav-link" href="/contacts/new">お問い合わせページ</a>
+
+         </div>
         </div>
+         <% end %>
+
         </nav>
-
-
-
       </header>
+    <div class="container">
       <main>
        <%= yield %>
       </main>
+          </div>
+      <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <p>最適な進路選択</p>
+          </div>
+          <div class="col-md-8">
+            <h6 class="text-white mt-2 mb-3">Link</h6>
+            <ul class="p-0 list-unstyled">
+              <li>
+                <a href="" title="About" class="text-white-50">会社概要</a>
+              </li>
+              <li>
+                <a href="" title="License informations" class="text-white-50">プライバシーポリシー</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </footer>
 
-      <footer>Copyright © HandaTakahiro. All Rights Reserved.</footer>
+    </div>
   </body>
 </html>

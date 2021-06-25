@@ -1,4 +1,5 @@
 class Admins::SchoolsController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @prefectures = Prefecture.all
    if params[:prefecture_id]
