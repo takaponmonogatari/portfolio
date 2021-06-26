@@ -1,9 +1,3 @@
-$(document).ready(function () {
-  $('.jquery').on('click', function(){
-    $(this).css('color','red');
-  });
-});
-
 /*!
  * Raty - A Star Rating Plugin
  *
@@ -774,3 +768,4 @@ $(document).ready(function () {
     return Raty;
   })();
 }));
+

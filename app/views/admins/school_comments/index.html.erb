@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+    <thead>
+      <h2>口コミ一覧</h2>
+    <tr>
+      <th class="col-1">学校名</th>
+      <th class="col-1">投稿者の立場</th>
+      <th class="col-1">評価</th>
+      <th class="col-5">レビュー</th>
+      <th class="col-5">削除ボタン</th>
+    </tr>
+  </thead>
+  <% @school_comments.each do |school_comment| %>
+    <tr>
+    	<td><%= school_comment.school.name %></td>
+    	<td><%= school_comment.position %></td>
+    	<td><%= school_comment.rate %></td>
+    	<td><%= school_comment.review %></td>
+    	<td><%= link_to '削除', school_school_comment_path(school_comment.school_id, school_comment.id), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_school_comment_#{school_comment.id}"%></td>
+    </tr>
+    </tr>
+  <% end %>
+</table>

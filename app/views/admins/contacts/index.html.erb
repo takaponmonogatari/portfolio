@@ -1,5 +1,18 @@
-<% @contacts.each do |contact| %>
- <%= contact.created_at %>
- <%= contact.name %>
- <%= contact.message %>
-<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">お問い合わせ日時</th>
+      <th scope="col">お問い合わせ者</th>
+      <th scope="col">お問い合わせメッセージ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+    <tr>
+     <td><%= contact.created_at %></td>
+     <td><%= contact.name %></td>
+     <td><%= contact.message %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,20 +1,27 @@
-<table>
+<table class="table table-bordered">
+    <thead>
+      <h2>口コミ一覧</h2>
+    <tr>
+      <th class="col-1">投稿者の立場</th>
+      <th class="col-1">評価</th>
+      <th class="col-5">レビュー</th>
+    </tr>
+  </thead>
   <% @school.school_comments.each do |school_comment| %>
     <tr>
-    	<td>
-    	</td>
     	<td><%= school_comment.position %></td>
-    	<td><%= school_comment.number %></td>
-    	<td><%= school_comment.review %></td>
     	<td><%= school_comment.rate %></td>
+    	<td><%= school_comment.review %></td>
     </tr>
   <% end %>
 </table>
+
 <%= form_with model:[@school,@school_comment], local: true do |f| %>
   <%= f.label :position,"あなたの立場" %><br>
-  <%= f.text_field :position %><br>
+  <%= f.select :position, [["在校生", "在校生"], ["卒業生", "卒業生"], ["保護者", "保護者"]], include_blank: "選択して下さい" %><br>
+
   <%= f.label :number,"電話番号下4桁" %><br>
-  <%= f.text_field :number %><br>
+  <%= f.text_field :number, autofocus: true, maxlength: "4" %><br>
    <div class="form-group row" id="star">
     <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
     <%= f.hidden_field :rate, id: :review_star %>
