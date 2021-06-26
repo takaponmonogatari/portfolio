@@ -6,9 +6,10 @@ class SearchController < ApplicationController
     @prefectures = Prefecture.all
     if @model == "school.name"
       @schools = School.search_school(@content, @method)
+      render "schools/search_school"
     else
       @schools = School.search_club(@content, @method)
+      render 'schools/search_club'
     end
-    render 'schools/index'
   end
 end

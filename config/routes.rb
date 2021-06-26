@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :schools
     resources :contacts, only: [:index]
+    resources :school_comments, only: [:index]
     get '/search', to: 'search#search'
   end
 

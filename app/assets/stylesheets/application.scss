@@ -16,6 +16,8 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+ @import 'slick';
+ @import 'slick-theme';
 
 .slider {
   position:relative;
@@ -27,14 +29,6 @@
 
 .slider-item01 {
     background:url(/images/no_image.jpg);
-}
-
-.slider-item02 {
-    background:url(../img/img_02.jpg);
-}
-
-.slider-item03 {
-    background:url(../img/img_03.jpg);
 }
 
 .slider-item {
@@ -61,13 +55,36 @@
 }
 
 .slick-prev {/*戻る矢印の位置と形状*/
-    left:2.5%;
-    transform: rotate(-135deg);
+   left:2.5%;
+//    transform: rotate(-135deg);
 }
 
 .slick-next {/*次へ矢印の位置と形状*/
     right:2.5%;
-    transform: rotate(45deg);
+ //   transform: rotate(45deg);
+}
+
+.slick-arrow{
+    z-index: 2!important;
+}
+
+.fa-arrow-alt-circle-left {
+  font-size: 40px;
+  position: absolute;
+  z-index: 100;
+  left: -100px;
+  top: 300px;
+  cursor: pointer;/*マウスカーソルを指マークに*/
+}
+
+.fa-arrow-alt-circle-right {
+  font-size: 40px;
+  position: absolute;
+  z-index: 100;
+  right: -100px;
+  top: 300px;
+ // opacity: 0.5;
+  cursor: pointer;/*マウスカーソルを指マークに*/
 }
 
 /*ドットナビゲーションの設定*/

@@ -1,34 +1,18 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">お問い合わせ日時</th>
+      <th scope="col">お問い合わせ者</th>
+      <th scope="col">お問い合わせメッセージ</th>
     </tr>
   </thead>
   <tbody>
+    <% @contacts.each do |contact| %>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+     <td><%= contact.created_at %></td>
+     <td><%= contact.name %></td>
+     <td><%= contact.message %></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <% end %>
   </tbody>
 </table>
-<% @contacts.each do |contact| %>
- <%= contact.created_at %>
- <%= contact.name %>
- <%= contact.message %>
-<% end %>

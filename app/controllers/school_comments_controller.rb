@@ -11,8 +11,7 @@ class SchoolCommentsController < ApplicationController
   end
 
   def destroy
-    @school = School.find(params[:id])
-    school_comment = @school.school_comments.find(params[:school_id])
+    school_comment = SchoolComment.find(params[:id])
     school_comment.destroy
     redirect_to request.referer
   end
